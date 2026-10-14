@@ -34,3 +34,11 @@ FP32 参考检查需要先安装 reference extra；没有 torch 时测试会明�
 参考资料：
 
 - 昇腾文档： https://www.hiascend.com/document?tab=document
+
+## 新模板目录约定（2026-10-14，优先于旧布局）
+
+用户已将旧代码迁至 old/，当前实现须遵循根目录 kernel.asc、main.asc、scripts/ 和 run.sh 模板。保留 run_kernel 的调用协议；kernel.asc 为被包含文件，不添加 main 或头文件保护。C++ 接口采用 Doxygen 注释，Python 使用参数/返回/异常 docstring。设备编译与精度未实际执行时必须明确标注，不得将 NumPy 数值模型测试称为 kernel 测试通过。
+
+## 用户修正后的开发边界
+
+run.sh 不得修改；scripts/ 保持原模板的数据、golden 和验证规则。当前算子工作集中在 kernel.asc，main.asc 保留原调用模板。不再新增元数据协议或用 Python/CPU 模型替代 Ascend C 设备实现与验证。
