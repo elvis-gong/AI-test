@@ -2,7 +2,7 @@
 
 ## 目标与依据
 
-实现 Ascend C SqrtSoftplusTopK 高性能算子，以 `doc/题目.md` 为需求来源，`doc/实施草案.md` 为当前设计。先确保精度，再优化耗时。
+实现 Ascend C SqrtSoftplusTopK 高性能算子，以 `docs/题目.md` 为需求来源，`docs/实施草案.md` 为当前设计。先确保精度，再优化耗时。
 
 ## 不可改变的计算契约
 
